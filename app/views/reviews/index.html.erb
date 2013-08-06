@@ -5,7 +5,7 @@
     <tr>
       <th>Contents</th>
       <th>Item</th>
-      <th>Restaurant</th>
+      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -16,8 +16,8 @@
     <% @reviews.each do |review| %>
       <tr>
         <td><%= review.contents %></td>
-        <td><%= review.item_id %></td>
-        <td><%= review.restaurant_id %></td>
+        <td><%= review.item.name %></td>
+        <td><%= review.user.name %></td>
         <td><%= link_to 'Show', review, :class => 'btn btn-info btn-small' %></td>
         <td><%= link_to 'Edit', edit_review_path(review), :class => 'btn btn-warning btn-small' %></td>
         <td><%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger btn-small' %></td>
