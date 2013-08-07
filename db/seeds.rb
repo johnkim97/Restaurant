@@ -6,35 +6,19 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-item_hashes = [
-	{ :name => "Cheeseburger", :restaurant => "Five Guys"},
-	{ :name => "Pizza", :restaurant => "Dominoes"},
-	{ :name => "Hot Wings", :restaurant => "Buffalo Wild Wings"},
-	{ :name => "BaconBurger", :restaurant => "Five Guys"}
-]
+Item.destroy_all
 
-Item.destroy_all 
-item_hashes.each do |i_hash|
-	i = Item.new
-	i.name = i_hash[:name]
-	i.restaurant = i_hash[:restaurant]
-	i.save
-end 
+i1 = Item.create({:name => "Cheeseburger", :restaurant => "Five Guys"})
+i2 = Item.create({ :name => "Pizza", :restaurant => "Dominoes"})
+i3 = Item.create({ :name => "Hot Wings", :restaurant => "Buffalo Wild Wings"})
+i4 = Item.create({ :name => "BaconBurger", :restaurant => "Five Guys"})
 puts "There are now #{Item.count} rows in the items table."
 
-user_hashes = [
-	{ :name => "John", :email => "johnj.k97@gmail.com"},
-	{ :name => "Roberto", :email => "r@r.com"},
-	{ :name => "Akaash", :email => "a@a.com"}
-]
+User.destroy_all
 
-User.destroy_all 
-user_hashes.each do |u_hash|
-	u = User.new
-	u.name = u_hash[:name]
-	u.email = u_hash[:email]
-	u.save
-end 
+u1 = User.create({:name => "John", :email => "johnj.k97@gmail.com"}) 
+u2 = User.create({ :name => "Roberto", :email => "r@r.com"})
+u3 = User.create({ :name => "Akaash", :email => "a@a.com"})
 
 puts "There are now #{User.count} rows in the users table."
 

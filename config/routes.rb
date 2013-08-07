@@ -1,4 +1,10 @@
 Restaurant::Application.routes.draw do
+  root "items#index"
+
+  get '/signin' => 'sessions#new', :as => 'sign_in'
+  post '/sessions/create' => 'sessions#create'
+  delete '/signout' => 'sessions#destroy', :as => 'sign_out'
+
   resources :reviews
 
   resources :items
